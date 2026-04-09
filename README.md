@@ -1,5 +1,6 @@
 # Vulcan OmniPro 220 — Multimodal Welder Assistant
 TRY IT OUT YOURSELF - IT'S HOSTED: https://prox-challenge-three.vercel.app/
+
 VIEW A VIDEO DEMO: https://www.youtube.com/watch?v=k7Mwph8ckFI
 
 <img src="product.webp" alt="Vulcan OmniPro 220" width="380" />
