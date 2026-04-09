@@ -4,6 +4,8 @@
 
 A multimodal AI agent for the Vulcan OmniPro 220 multiprocess welder. Ask questions in natural language or upload a weld photo for visual diagnosis. The agent answers with text, interactive diagrams, calculators, and flowcharts — not just prose.
 
+CHECK IT OUT: https://prox-challenge-three.vercel.app/
+
 ---
 
 ## Quick Start
