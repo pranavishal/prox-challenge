@@ -1,0 +1,61 @@
+{
+  "_description": "Duty cycle data extracted from the Vulcan OmniPro 220 owner's manual (pages 7, 19, 29). Duty cycle = minutes of welding allowed per 10-minute period at a given amperage.",
+  "explanation": "The duty cycle defines how many minutes within a 10-minute window you can weld at a given current without overheating. Example: 40% at 100A means 4 minutes welding, 6 minutes rest.",
+  "processes": {
+    "MIG": {
+      "120V": {
+        "rated": { "duty_cycle_pct": 40, "amperage": 100, "weld_minutes": 4, "rest_minutes": 6 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 75 },
+        "current_range": { "min": 30, "max": 140 },
+        "voltage_range": { "min": "15.5V at 30A", "max": "21V at 140A" }
+      },
+      "240V": {
+        "rated": { "duty_cycle_pct": 25, "amperage": 200, "weld_minutes": 2.5, "rest_minutes": 7.5 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 115 },
+        "current_range": { "min": 30, "max": 220 },
+        "voltage_range": { "min": "15.5V at 30A", "max": "25V at 220A" }
+      }
+    },
+    "Flux-Cored": {
+      "120V": {
+        "rated": { "duty_cycle_pct": 40, "amperage": 100, "weld_minutes": 4, "rest_minutes": 6 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 75 },
+        "current_range": { "min": 30, "max": 140 },
+        "note": "Same duty cycle as MIG — uses same wire feed mechanism"
+      },
+      "240V": {
+        "rated": { "duty_cycle_pct": 25, "amperage": 200, "weld_minutes": 2.5, "rest_minutes": 7.5 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 115 },
+        "current_range": { "min": 30, "max": 220 }
+      }
+    },
+    "TIG": {
+      "120V": {
+        "rated": { "duty_cycle_pct": 40, "amperage": 125, "weld_minutes": 4, "rest_minutes": 6 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 90 },
+        "current_range": { "min": 10, "max": 125 },
+        "voltage_range": { "min": "10.4V at 10A", "max": "15V at 125A" }
+      },
+      "240V": {
+        "rated": { "duty_cycle_pct": 30, "amperage": 175, "weld_minutes": 3, "rest_minutes": 7 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 105 },
+        "current_range": { "min": 10, "max": 175 },
+        "voltage_range": { "min": "10.4V at 10A", "max": "17V at 175A" }
+      }
+    },
+    "Stick": {
+      "120V": {
+        "rated": { "duty_cycle_pct": 40, "amperage": 80, "weld_minutes": 4, "rest_minutes": 6 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 60 },
+        "current_range": { "min": 10, "max": 80 },
+        "voltage_range": { "min": "20.4V at 10A", "max": "23.2V at 80A" }
+      },
+      "240V": {
+        "rated": { "duty_cycle_pct": 25, "amperage": 175, "weld_minutes": 2.5, "rest_minutes": 7.5 },
+        "continuous": { "duty_cycle_pct": 100, "amperage": 100 },
+        "current_range": { "min": 10, "max": 175 },
+        "voltage_range": { "min": "20.4V at 10A", "max": "27V at 175A" }
+      }
+    }
+  }
+}

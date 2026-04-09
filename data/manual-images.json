@@ -1,0 +1,152 @@
+{
+  "_description": "Catalog of manual page images served from /manual-images/. Each entry maps keywords to the image file and a description of what's shown. Used by the get_manual_image tool.",
+  "images": [
+    {
+      "id": "quickstart-setup",
+      "file": "quickstart-1.png",
+      "title": "Quick Start Guide — Wire Spool & Setup Steps",
+      "description": "6-step visual quick start guide: installing a 2lb wire spool, feeding wire through guides into the feed mechanism, plugging in the power cord, adjusting wire feed tension with the knob, replacing the nozzle and contact tip.",
+      "keywords": ["quick start", "setup", "wire spool", "spool installation", "feed wire", "tension", "nozzle", "contact tip", "getting started", "first time"]
+    },
+    {
+      "id": "quickstart-polarity",
+      "file": "quickstart-2.png",
+      "title": "Quick Start Guide — Cable Setup for All Processes",
+      "description": "Cable and polarity setup diagrams for all four processes: Stick (ground to negative, electrode to positive), MIG (ground to negative, wire feed to positive), Flux-Cored (ground to positive, wire feed to negative), TIG (ground to positive, TIG torch to negative, foot pedal inside, gas line to regulator).",
+      "keywords": ["polarity", "cable setup", "socket", "MIG cables", "flux-cored cables", "TIG cables", "stick cables", "ground clamp", "electrode", "wire feed cable", "positive socket", "negative socket", "all processes"]
+    },
+    {
+      "id": "selection-chart",
+      "file": "chart-1.png",
+      "title": "How to Choose a Welder — Process Selection Chart",
+      "description": "Full process selection chart: how to choose between Flux-Cored, MIG, Stick, and TIG based on skill level, shielding gas availability, material type, material thickness, typical applications, and weld cleanliness. Also shows MIG vs Flux-Cored comparison and duty cycle example.",
+      "keywords": ["process selection", "which process", "MIG vs flux", "choose welder", "selection chart", "what process", "skill level", "material", "aluminum", "steel", "duty cycle example", "shielding gas comparison"]
+    },
+    {
+      "id": "front-panel",
+      "file": "manual-08.png",
+      "title": "Front Panel Controls Diagram",
+      "description": "Labeled diagram of the welder's front panel showing: Home Button, Back Button, Control Knob, LCD Display, Left Knob, Right Knob, Power Switch, Storage Compartment, MIG Gun/Spool Gun Cable Socket, Positive Socket (+), Spool Gun Gas Outlet, Negative Socket (–), Wire Feed Power Cable.",
+      "keywords": ["front panel", "controls", "LCD display", "knob", "power switch", "sockets", "positive socket", "negative socket", "wire feed cable", "control panel", "buttons", "display"]
+    },
+    {
+      "id": "interior-controls",
+      "file": "manual-09.png",
+      "title": "Interior Controls — Wire Feed Mechanism",
+      "description": "Interior panel showing: Cold Wire Feed Switch, Idler Arm, Feed Tensioner, Feed Roller Knob, Wire Feed Mechanism, Wire Inlet Liner, Spool Knob, Wire Feed Control Socket, Foot Pedal Socket.",
+      "keywords": ["wire feed", "feed mechanism", "idler arm", "feed tensioner", "cold wire feed", "interior", "inside welder", "foot pedal socket", "feed roller", "wire inlet"]
+    },
+    {
+      "id": "spool-installation-2lb",
+      "file": "manual-10.png",
+      "title": "Wire Spool Installation — 2lb Spool",
+      "description": "Step-by-step diagrams for installing a 2lb wire spool: removing wingnut and spacer, placing spool on spindle against brake pad, securing with spacer and wingnut. Shows spool must unwind clockwise.",
+      "keywords": ["wire spool", "spool installation", "2lb spool", "wingnut", "spacer", "spindle", "brake pad", "load spool", "install wire"]
+    },
+    {
+      "id": "spool-installation-10lb",
+      "file": "manual-11.png",
+      "title": "Wire Spool Installation — 10-12lb Spool + Feed Roller",
+      "description": "Installation for 10-12lb spool using adapter, plus feed roller instructions showing V-groove for solid wire (0.025, 0.030/0.035 sizes) and knurled groove for flux-cored wire (0.045 size). How to flip/replace the feed roller.",
+      "keywords": ["10lb spool", "12lb spool", "large spool", "spool adapter", "feed roller", "v-groove", "knurled groove", "solid wire roller", "flux-cored roller", "wire size", "roller size"]
+    },
+    {
+      "id": "mig-cable-setup",
+      "file": "manual-13.png",
+      "title": "MIG & Flux-Cored Polarity Setup (DCEP / DCEN)",
+      "description": "Polarity diagrams for MIG (DCEP) and Flux-Cored (DCEN). MIG: Ground Clamp to Negative socket, Wire Feed Power Cable to Positive socket. Flux-Cored: Ground Clamp to Positive socket, Wire Feed Power Cable to Negative socket. Shows gas inlet and reset button location.",
+      "keywords": ["MIG polarity", "flux-cored polarity", "DCEP", "DCEN", "ground clamp socket", "wire feed socket", "MIG cable", "flux cable", "polarity setup", "which socket", "positive negative"]
+    },
+    {
+      "id": "duty-cycle-mig",
+      "file": "manual-19.png",
+      "title": "MIG Duty Cycle Diagram",
+      "description": "Duty cycle diagrams for MIG welding: 120VAC = 40% at 100A (4 min weld / 6 min rest), 100% continuous at 75A. 240VAC = 25% at 200A (2.5 min weld / 7.5 min rest), 100% continuous at 115A. Explains duty cycle concept and thermal protection.",
+      "keywords": ["duty cycle", "MIG duty cycle", "how long weld", "overheat", "thermal protection", "weld time", "rest time", "100A", "200A", "120V duty", "240V duty", "continuous"]
+    },
+    {
+      "id": "welding-technique",
+      "file": "manual-22.png",
+      "title": "MIG/Flux-Cored Welding Technique — Gun Angles",
+      "description": "Diagrams showing welding technique: stringer bead vs weave bead, gun angles (90° for butt welds, 45° for fillet welds), push angle (0-15°) for MIG solid wire, drag angle (0-15°) for flux-cored, and CTWD (contact tip to work distance, max 1/2 inch).",
+      "keywords": ["welding technique", "gun angle", "push angle", "drag angle", "stringer bead", "weave bead", "butt weld", "fillet weld", "CTWD", "contact tip distance", "45 degree", "90 degree"]
+    },
+    {
+      "id": "tig-setup",
+      "file": "manual-24.png",
+      "title": "TIG Welding Setup — Cable Connections",
+      "description": "TIG setup diagram showing cable connections: Ground Clamp Cable to Positive Socket, TIG Torch Cable to Negative Socket, Foot Pedal Cable to Foot Pedal Socket inside welder, Shielding Gas Hose to gas inlet. TIG torch and foot pedal sold separately.",
+      "keywords": ["TIG setup", "TIG cables", "TIG polarity", "TIG socket", "foot pedal", "TIG torch", "ground clamp TIG", "TIG gas", "argon", "TIG connection"]
+    },
+    {
+      "id": "tig-tungsten",
+      "file": "manual-26.png",
+      "title": "TIG Torch Assembly — Tungsten Electrode Preparation",
+      "description": "How to sharpen and assemble the TIG torch: grinding the tungsten electrode to a conical point (2.5x diameter length), electrode protrusion 1/8 to 1/4 inch beyond ceramic nozzle, collet body, collet, and back cap assembly.",
+      "keywords": ["tungsten", "electrode", "sharpen tungsten", "grind electrode", "TIG torch assembly", "collet", "ceramic nozzle", "back cap", "TIG torch", "tungsten tip"]
+    },
+    {
+      "id": "stick-setup",
+      "file": "manual-27.png",
+      "title": "Stick Welding Setup — Cable Connections",
+      "description": "Stick welding setup: Ground Clamp Cable to Negative Socket, Electrode Holder Cable to Positive Socket. No shielding gas required. Power cord connection.",
+      "keywords": ["stick setup", "stick cables", "stick polarity", "electrode holder", "ground clamp stick", "SMAW", "stick welding"]
+    },
+    {
+      "id": "duty-cycle-tig-stick",
+      "file": "manual-29.png",
+      "title": "TIG and Stick Duty Cycle Diagrams",
+      "description": "Duty cycle for TIG: 120V = 40% at 125A (4 min/6 min), 100% at 90A. 240V = 30% at 175A (3 min/7 min), 100% at 105A. Duty cycle for Stick: 120V = 40% at 80A (4 min/6 min), 100% at 60A. 240V = 25% at 175A (2.5 min/7.5 min), 100% at 100A.",
+      "keywords": ["TIG duty cycle", "stick duty cycle", "how long TIG", "how long stick", "125A duty", "175A duty", "80A duty", "TIG overheat", "stick overheat"]
+    },
+    {
+      "id": "weld-diagnosis-overview",
+      "file": "manual-35.png",
+      "title": "Wire Weld Diagnosis — Heat Control & Penetration Overview",
+      "description": "Overview diagrams comparing inadequate penetration (not hot enough), proper penetration (ideal heat), and excess penetration/burn-through (too hot). Shows how to increase or decrease workpiece heat. Side-by-side example weld diagrams.",
+      "keywords": ["weld diagnosis", "penetration", "burn through", "too hot", "not hot enough", "heat control", "weld quality", "weld appearance", "good weld", "bad weld"]
+    },
+    {
+      "id": "weld-diagnosis-defects",
+      "file": "manual-36.png",
+      "title": "Wire Weld Defects — Penetration, Adhesion, Slag",
+      "description": "Detailed profile and top views of: proper vs inadequate penetration with causes/solutions, weld not adhering properly (gaps between bead and workpiece), coat of slag over weld explanation.",
+      "keywords": ["weld defects", "inadequate penetration", "weld not sticking", "adhesion", "slag", "weld profile", "cross section", "penetration diagram", "weld gaps"]
+    },
+    {
+      "id": "weld-diagnosis-porosity-spatter",
+      "file": "manual-37.png",
+      "title": "Wire Weld Defects — Porosity, Spatter, Crooked Bead, Burn-Through",
+      "description": "Top view diagrams of: crooked/wavy bead, burn-through (hole in base material), porosity (small holes/cavities in bead), excessive spatter with causes and solutions for each.",
+      "keywords": ["porosity", "porosity weld", "holes in weld", "spatter", "excessive spatter", "burn through", "crooked bead", "wavy bead", "weld holes", "porous weld"]
+    },
+    {
+      "id": "stick-diagnosis-overview",
+      "file": "manual-38.png",
+      "title": "Stick Weld Diagnosis — Heat Control Overview",
+      "description": "Stick weld diagnosis diagrams: current too low, current too high, weld speed too fast, weld speed too slow, arc length too short, arc length too long — with corrections for each. Comparison of good stick weld to defective welds.",
+      "keywords": ["stick weld diagnosis", "stick weld defects", "current too low", "current too high", "arc length", "weld speed", "stick quality", "SMAW diagnosis"]
+    },
+    {
+      "id": "stick-diagnosis-defects",
+      "file": "manual-39.png",
+      "title": "Stick Weld Defects — Penetration, Adhesion, Slag",
+      "description": "Stick weld defect profile views: excess penetration/burn-through, proper penetration, inadequate penetration with causes and solutions. Weld not adhering properly. Coat of slag explanation.",
+      "keywords": ["stick penetration", "stick burn through", "stick weld not adhering", "stick slag", "stick defects"]
+    },
+    {
+      "id": "wiring-schematic",
+      "file": "manual-45.png",
+      "title": "Internal Wiring Schematic",
+      "description": "Full internal wiring schematic of the Vulcan OmniPro 220 showing MCU board, Remote board, PFC, IGBT, rectifiers, transformer, solenoid valve, fans, wire feeder connections, and all CN connector labels.",
+      "keywords": ["wiring schematic", "electrical diagram", "circuit diagram", "internal wiring", "schematic", "MCU board", "IGBT", "wiring diagram", "electrical schematic"]
+    },
+    {
+      "id": "parts-diagram",
+      "file": "manual-47.png",
+      "title": "Parts Assembly Diagram",
+      "description": "Numbered exploded assembly diagram showing all 61 parts of the welder with part numbers corresponding to the parts list.",
+      "keywords": ["parts diagram", "assembly diagram", "exploded view", "parts list", "part numbers", "components", "welder parts"]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "_description": "Wire, material, and process settings from the selection chart and manual. Used by recommend_settings tool.",
+  "wire_feed_tension": {
+    "solid_wire": { "min": 3, "max": 5, "unit": "tension setting" },
+    "flux_cored_wire": { "min": 2, "max": 3, "unit": "tension setting", "note": "Too much tension will crush flux-cored wire and cause feeding problems" }
+  },
+  "wire_sizes": {
+    "solid_core": ["0.025\"", "0.030\"", "0.035\""],
+    "flux_cored": ["0.030\"", "0.035\"", "0.045\""]
+  },
+  "contact_tip_to_work_distance": {
+    "ctwd": "1/2 inch maximum",
+    "note": "Keeping the contact tip within 1/2\" of the work surface is critical for stable arc and good shielding gas coverage"
+  },
+  "wire_stickout": "1/2 inch from contact tip",
+  "gun_angles": {
+    "MIG_solid_wire": { "type": "push", "angle": "0-15 degrees away from weld direction" },
+    "flux_cored": { "type": "drag", "angle": "0-15 degrees toward weld direction" },
+    "butt_weld": "90 degrees (straight up and down)",
+    "fillet_weld": "45 degrees"
+  },
+  "process_selection": {
+    "Flux-Cored": {
+      "skill_level": "Low",
+      "shielding_gas": false,
+      "materials": ["Steel", "Stainless Steel"],
+      "thickness_range": "18 gauge to 5/16\"",
+      "spatter": "More spatter",
+      "best_for": ["Outdoor/windy conditions", "Rusty or dirty steel", "Out-of-position welding", "High deposition rates"],
+      "pros": ["No gas required", "Works outdoors", "Forgiving on dirty metal"],
+      "cons": ["More spatter", "Slag must be cleaned"]
+    },
+    "MIG": {
+      "skill_level": "Low to Moderate",
+      "shielding_gas": true,
+      "gas_type": "C25 (75% Argon / 25% CO2) or 100% CO2",
+      "materials": ["Steel", "Stainless Steel", "Aluminum (with optional Spool Gun)"],
+      "thickness_range": "22 gauge to 3/8\"",
+      "spatter": "Clean / Minimal spatter",
+      "best_for": ["Fast production", "Thin materials", "Clean indoor welds", "Learning"],
+      "pros": ["Easiest to learn", "Clean welds with no slag", "Better control on thin materials", "Fast"],
+      "cons": ["Requires shielding gas", "Wind affects gas coverage", "Needs clean metal"]
+    },
+    "Stick": {
+      "skill_level": "Moderate",
+      "shielding_gas": false,
+      "materials": ["Steel", "Stainless Steel", "Castings"],
+      "thickness_range": "10 gauge to 1/2\"",
+      "spatter": "More spatter",
+      "best_for": ["Outdoor/windy conditions", "Rusty or dirty steel", "Thicker materials", "Deep penetration"],
+      "pros": ["No gas required", "Works outdoors", "Good for thicker materials", "Deep penetration"],
+      "cons": ["More spatter", "Slag must be cleaned", "Harder to learn than MIG"]
+    },
+    "TIG": {
+      "skill_level": "High",
+      "shielding_gas": true,
+      "gas_type": "100% Argon",
+      "materials": ["Steel", "Stainless Steel", "Chrome Moly", "Aluminum (AC TIG)", "Magnesium Alloys (AC TIG)"],
+      "thickness_range": "24 gauge to 3/16\"",
+      "spatter": "Extremely clean — no spatter",
+      "best_for": ["Highest quality welds", "Aesthetic welds", "Thin materials", "Bicycle frames", "Exotic alloys"],
+      "pros": ["Extremely clean", "Precise control", "Works on many materials", "No spatter"],
+      "cons": ["Hardest to learn", "Slowest process", "Requires foot pedal", "Expensive torch required"]
+    }
+  },
+  "shielding_gas_setup": {
+    "MIG": {
+      "gas": "C25 (75% Argon / 25% CO2) or 100% CO2",
+      "flow_rate_scfh": { "min": 20, "max": 30 },
+      "note": "For CO2 tanks (CGA-320), use the included CGA 580/320 adapter"
+    },
+    "TIG": {
+      "gas": "100% Argon",
+      "flow_rate_scfh": { "min": 10, "max": 25 }
+    }
+  },
+  "lcd_synergic_settings": {
+    "description": "The synergic control system auto-sets voltage and wire speed based on wire diameter and material thickness. Manual adjustment is possible.",
+    "MIG_Flux_Cored": ["Wire Diameter", "Material Thickness", "Wire Feed Speed (Amperage)", "Voltage", "Run-In WFS", "Inductance", "Spot Timer"],
+    "TIG": ["Rod Diameter", "Material Thickness", "Output Amperage", "Gas Type"],
+    "Stick": ["Electrode Type", "Electrode Diameter", "Material Thickness", "Output Amperage", "Hot Start", "Arc Force"],
+    "saved_settings": "Up to 5 configurations can be saved and recalled"
+  }
+}

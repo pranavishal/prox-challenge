@@ -1,0 +1,81 @@
+{
+  "_description": "Polarity and cable setup for each welding process. Extracted from manual pages 13, 24, 27 and the Quick Start Guide.",
+  "processes": {
+    "MIG": {
+      "polarity": "DCEP",
+      "polarity_full": "Direct Current Electrode Positive",
+      "ground_clamp": "Negative socket (–)",
+      "electrode_cable": "Wire Feed Power Cable into Positive socket (+)",
+      "shielding_gas": "Required — C25 (75% Argon/25% CO2) or CO2",
+      "gas_flow_scfh": { "min": 20, "max": 30 },
+      "wire_feed_connected": true,
+      "notes": "Also connect MIG Gun to wire feed, and Wire Feed Control Cable inside welder",
+      "steps": [
+        "Plug Ground Clamp Cable into Negative (–) Socket — twist clockwise to lock",
+        "Plug Wire Feed Power Cable into Positive (+) Socket — twist clockwise to lock",
+        "Connect MIG Gun to Wire Feed mechanism",
+        "Connect Wire Feed Control Cable to interior socket",
+        "Connect shielding gas hose to regulator and welder gas inlet",
+        "Set gas flow to 20-30 SCFH"
+      ]
+    },
+    "Flux-Cored": {
+      "polarity": "DCEN",
+      "polarity_full": "Direct Current Electrode Negative",
+      "ground_clamp": "Positive socket (+)",
+      "electrode_cable": "Wire Feed Power Cable into Negative socket (–)",
+      "shielding_gas": "None required — self-shielding wire",
+      "gas_flow_scfh": null,
+      "wire_feed_connected": true,
+      "notes": "Opposite polarity from MIG — critical difference. No gas needed.",
+      "steps": [
+        "Plug Ground Clamp Cable into Positive (+) Socket — twist clockwise to lock",
+        "Plug Wire Feed Power Cable into Negative (–) Socket — twist clockwise to lock",
+        "Connect MIG Gun to Wire Feed mechanism",
+        "Connect Wire Feed Control Cable to interior socket",
+        "No shielding gas required"
+      ]
+    },
+    "TIG": {
+      "polarity": "DCEN",
+      "polarity_full": "Direct Current Electrode Negative",
+      "ground_clamp": "Positive socket (+)",
+      "electrode_cable": "TIG Torch Cable into Negative socket (–)",
+      "shielding_gas": "Required — 100% Argon",
+      "gas_flow_scfh": { "min": 10, "max": 25 },
+      "wire_feed_connected": false,
+      "foot_pedal": "Optional — connects to Foot Pedal Socket inside welder",
+      "notes": "Foot pedal sold separately. TIG torch sold separately. For AC TIG (aluminum), different setting required.",
+      "steps": [
+        "Plug Ground Clamp Cable into Positive (+) Socket — twist clockwise to lock",
+        "Plug TIG Torch Cable into Negative (–) Socket — twist clockwise to lock",
+        "Connect Foot Pedal Cable to Foot Pedal Socket inside welder (if using)",
+        "Connect 100% Argon gas cylinder with regulator",
+        "Connect Shielding Gas Hose to Regulator outlet and welder Gas Inlet",
+        "Set gas flow to 10-25 SCFH",
+        "Leave Wire Feed Power Cable disconnected"
+      ]
+    },
+    "Stick": {
+      "polarity": "DCEP",
+      "polarity_full": "Direct Current Electrode Positive",
+      "ground_clamp": "Negative socket (–)",
+      "electrode_cable": "Electrode Holder Cable into Positive socket (+)",
+      "shielding_gas": "None required",
+      "gas_flow_scfh": null,
+      "wire_feed_connected": false,
+      "notes": "No gas, no wire feed. Most straightforward setup.",
+      "steps": [
+        "Plug Ground Clamp Cable into Negative (–) Socket — twist clockwise to lock",
+        "Plug Electrode Holder Cable into Positive (+) Socket — twist clockwise to lock",
+        "Leave Wire Feed Power Cable disconnected",
+        "No shielding gas required"
+      ]
+    }
+  },
+  "socket_layout": {
+    "description": "Front panel socket layout (left to right): MIG Gun/Spool Gun Cable Socket, Negative Socket (–), Positive Socket (+)",
+    "negative_socket": "Left side — accepts ground clamp for MIG/Stick, TIG torch for TIG",
+    "positive_socket": "Right side — accepts wire feed power for MIG, ground clamp for TIG/Flux-Cored, electrode holder for Stick"
+  }
+}

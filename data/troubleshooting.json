@@ -1,0 +1,437 @@
+{
+  "_description": "Troubleshooting knowledge modeled as a graph — nodes are problems/symptoms, edges connect to causes and solutions. Extracted from manual pages 42-44.",
+  "nodes": {
+    "wire_not_feeding": {
+      "id": "wire_not_feeding",
+      "type": "problem",
+      "label": "Wire Feed Motor Runs but Wire Does Not Feed",
+      "process": ["MIG", "Flux-Cored"],
+      "causes": ["insufficient_wire_pressure", "wrong_roller_size", "damaged_gun", "tensioner_too_tight"]
+    },
+    "birds_nest": {
+      "id": "birds_nest",
+      "type": "problem",
+      "label": "Wire Creates a Bird's Nest During Operation",
+      "process": ["MIG", "Flux-Cored"],
+      "causes": ["excess_wire_pressure", "wrong_contact_tip", "connector_not_inserted", "damaged_liner"]
+    },
+    "wire_stops_welding": {
+      "id": "wire_stops_welding",
+      "type": "problem",
+      "label": "Wire Stops During Welding",
+      "process": ["MIG", "Flux-Cored"],
+      "causes": ["bent_gun_cable", "clogged_liner", "liner_too_small", "tangled_spool", "no_roller_contact", "wrong_roller_tension"]
+    },
+    "arc_not_stable": {
+      "id": "arc_not_stable",
+      "type": "problem",
+      "label": "Welding Arc Not Stable",
+      "process": ["MIG", "Flux-Cored", "TIG", "Stick"],
+      "causes": ["wire_not_feeding", "wrong_tip_liner", "wrong_wire_speed", "loose_gun_cable", "damaged_gun", "wrong_polarity", "insufficient_gas", "poor_ground_connection", "loose_electrode_cable", "damaged_holder", "wrong_current_setting", "low_gas"]
+    },
+    "weak_arc": {
+      "id": "weak_arc",
+      "type": "problem",
+      "label": "Weak Arc Strength",
+      "process": ["MIG", "Flux-Cored", "TIG", "Stick"],
+      "causes": ["wrong_line_voltage", "extension_cord_used", "insufficient_current"]
+    },
+    "welder_wont_start": {
+      "id": "welder_wont_start",
+      "type": "problem",
+      "label": "Welder Does Not Function When Switched On",
+      "process": ["MIG", "Flux-Cored", "TIG", "Stick"],
+      "causes": ["thermal_protection_tripped", "faulty_trigger", "no_ground_clamp", "no_shielding_gas_tig"]
+    },
+    "no_display": {
+      "id": "no_display",
+      "type": "problem",
+      "label": "LCD Display Does Not Light When Switched On",
+      "process": ["MIG", "Flux-Cored", "TIG", "Stick"],
+      "causes": ["not_connected_to_outlet", "outlet_unpowered", "wrong_plug_rating", "circuit_breaker_tripped", "power_cord_not_seated"]
+    },
+    "wire_arc_no_ignite": {
+      "id": "wire_arc_no_ignite",
+      "type": "problem",
+      "label": "Wire Feeds but Arc Does Not Ignite",
+      "process": ["MIG", "Flux-Cored"],
+      "causes": ["unit_not_connected", "insufficient_voltage", "faulty_trigger", "low_over_voltage_protection", "wrong_mode"]
+    },
+    "porosity": {
+      "id": "porosity",
+      "type": "problem",
+      "label": "Porosity in the Weld Metal (holes/cavities in bead)",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["empty_gas_bottle", "wrong_gas_flow", "dirty_workpiece", "ctwd_too_far", "wrong_polarity", "dirty_wire", "wrong_gas_type", "inconsistent_speed"]
+    },
+    "inadequate_penetration": {
+      "id": "inadequate_penetration",
+      "type": "problem",
+      "label": "Inadequate Penetration — weld doesn't go deep enough",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["voltage_too_low", "wire_feed_too_slow", "travel_speed_too_fast", "wrong_technique", "wrong_ctwd", "wrong_angles", "workpieces_too_thick"]
+    },
+    "excess_penetration": {
+      "id": "excess_penetration",
+      "type": "problem",
+      "label": "Excess Penetration or Burn-Through — weld droops or falls through",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["workpiece_overheating", "travel_speed_too_slow", "excessive_material"]
+    },
+    "weld_not_adhering": {
+      "id": "weld_not_adhering",
+      "type": "problem",
+      "label": "Weld Not Adhering Properly — gaps between weld and workpiece",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["improper_clamping", "excessive_heat", "wrong_technique", "insufficient_heat", "dirty_workpiece", "insufficient_material", "wrong_angles"]
+    },
+    "excessive_spatter": {
+      "id": "excessive_spatter",
+      "type": "problem",
+      "label": "Excessive Spatter — large grainy spatter (fine spatter is normal)",
+      "process": ["MIG", "Flux-Cored"],
+      "causes": ["wrong_polarity", "insufficient_gas", "wrong_gas_type", "dirty_workpiece", "wire_too_fast", "ctwd_too_far"]
+    },
+    "crooked_bead": {
+      "id": "crooked_bead",
+      "type": "problem",
+      "label": "Crooked or Wavy Bead",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["inaccurate_welding", "inconsistent_speed", "ctwd_too_long"]
+    },
+    "burn_through": {
+      "id": "burn_through",
+      "type": "problem",
+      "label": "Burn-Through — base material melts away, leaving a hole",
+      "process": ["MIG", "Flux-Cored", "Stick"],
+      "causes": ["workpiece_overheating", "travel_speed_too_slow", "excessive_material"]
+    }
+  },
+  "causes": {
+    "insufficient_wire_pressure": {
+      "id": "insufficient_wire_pressure",
+      "label": "Insufficient wire feed pressure",
+      "solutions": ["Increase wire feed pressure. Follow step 27 in manual — press trigger against wood block 2-3\" away until wire bends"]
+    },
+    "wrong_roller_size": {
+      "id": "wrong_roller_size",
+      "label": "Incorrect wire feed roller size",
+      "solutions": ["Flip the feed roller to the correct groove size matching your wire diameter. Check that V-groove is used for solid wire, knurled groove for flux-cored."]
+    },
+    "damaged_gun": {
+      "id": "damaged_gun",
+      "label": "Damaged MIG Gun, cable, or liner",
+      "solutions": ["Have a qualified technician inspect and replace as necessary"]
+    },
+    "tensioner_too_tight": {
+      "id": "tensioner_too_tight",
+      "label": "Feed tensioner is too tight",
+      "solutions": ["Loosen feed tensioner — it should apply only enough pressure to prevent spool from spinning after trigger release"]
+    },
+    "excess_wire_pressure": {
+      "id": "excess_wire_pressure",
+      "label": "Excess wire feed pressure",
+      "solutions": ["Reduce wire feed pressure. Correct tension: 3-5 for solid wire, 2-3 for flux-cored"]
+    },
+    "wrong_contact_tip": {
+      "id": "wrong_contact_tip",
+      "label": "Incorrect contact tip size",
+      "solutions": ["Replace with the correct tip size for the wire diameter being used"]
+    },
+    "connector_not_inserted": {
+      "id": "connector_not_inserted",
+      "label": "MIG Gun Cable Connector not fully inserted into Wire Feed",
+      "solutions": ["Remove and re-insert Gun Cable Connector fully — no O-rings should be exposed. Tighten knob securely."]
+    },
+    "wrong_polarity": {
+      "id": "wrong_polarity",
+      "label": "Incorrect polarity for process",
+      "solutions": ["Check and correct polarity: MIG = DCEP (ground to negative, wire feed to positive). Flux-Cored = DCEN (ground to positive, wire feed to negative). TIG = ground to positive, torch to negative. Stick = DCEP."]
+    },
+    "insufficient_gas": {
+      "id": "insufficient_gas",
+      "label": "Insufficient shielding gas flow",
+      "solutions": ["Check gas bottle level. Set flow rate to 20-30 SCFH for MIG, 10-25 SCFH for TIG. Clean nozzle. Ensure Gun Cable Connector is fully inserted."]
+    },
+    "dirty_workpiece": {
+      "id": "dirty_workpiece",
+      "label": "Dirty workpiece (rust, paint, oil, coating)",
+      "solutions": ["Clean workpiece down to bare metal with wire brush or angle grinder. There must be no rust, paint, oil, or other materials on the weld surface."]
+    },
+    "ctwd_too_far": {
+      "id": "ctwd_too_far",
+      "label": "Contact tip to work distance (CTWD) too long",
+      "solutions": ["Maintain CTWD of 1/2\" or less. Move gun closer to the workpiece."]
+    },
+    "dirty_wire": {
+      "id": "dirty_wire",
+      "label": "Dirty or contaminated welding wire",
+      "solutions": ["Replace wire if rusty or contaminated. Ensure wire is clean and free from oil, coatings, and residues."]
+    },
+    "thermal_protection_tripped": {
+      "id": "thermal_protection_tripped",
+      "label": "Thermal protection device tripped (overheating)",
+      "solutions": ["Leave Power Switch ON. Wait for welder to cool — fan will help. Welder auto-restarts when cool. Follow duty cycle limits going forward."]
+    },
+    "wrong_line_voltage": {
+      "id": "wrong_line_voltage",
+      "label": "Incorrect line voltage",
+      "solutions": ["Check voltage at outlet. Contact licensed electrician if insufficient."]
+    },
+    "extension_cord_used": {
+      "id": "extension_cord_used",
+      "label": "Extension cord in use",
+      "solutions": ["Do NOT use an extension cord with this welder. Use only the supplied power cords."]
+    },
+    "voltage_too_low": {
+      "id": "voltage_too_low",
+      "label": "Output voltage too low or wire feed too slow",
+      "solutions": ["Increase output voltage. Or increase wire feed speed."]
+    },
+    "workpiece_overheating": {
+      "id": "workpiece_overheating",
+      "label": "Workpiece overheating",
+      "solutions": ["Reduce wire feed speed. Decrease current. Increase travel speed."]
+    },
+    "travel_speed_too_slow": {
+      "id": "travel_speed_too_slow",
+      "label": "Travel speed too slow",
+      "solutions": ["Increase travel speed and keep it steady."]
+    },
+    "travel_speed_too_fast": {
+      "id": "travel_speed_too_fast",
+      "label": "Travel speed too fast",
+      "solutions": ["Decrease travel speed — move gun more slowly and steadily along the joint."]
+    },
+    "improper_clamping": {
+      "id": "improper_clamping",
+      "label": "Workpieces not properly clamped",
+      "solutions": ["Clamp workpieces securely. Make tack welds to hold workpieces in position before full weld."]
+    },
+    "damaged_liner": {
+      "id": "damaged_liner",
+      "label": "Damaged or worn gun liner",
+      "solutions": ["Inspect liner for kinks, blockage, or wear. Blow out with compressed air. Replace liner if damaged — a worn liner is one of the most common causes of bird's nest jams."]
+    },
+    "bent_gun_cable": {
+      "id": "bent_gun_cable",
+      "label": "Bent or kinked MIG gun cable",
+      "solutions": ["Straighten the gun cable into a smooth arc. Avoid sharp bends during welding. If the liner is permanently kinked, replace the liner. Keep cable radius at least 12 inches when possible."]
+    },
+    "clogged_liner": {
+      "id": "clogged_liner",
+      "label": "Clogged or blocked gun liner",
+      "solutions": ["Remove liner and blow out with compressed air. Run wire through by hand to check for smooth passage. If obstruction remains, replace the liner. Use correct wire diameter for liner ID."]
+    },
+    "liner_too_small": {
+      "id": "liner_too_small",
+      "label": "Liner inner diameter too small for wire diameter",
+      "solutions": ["Replace liner with the correct size: 0.025–0.030\" wire needs a 0.030–0.035\" liner; 0.035\" wire needs a 0.040\" liner. Liner ID must be larger than wire diameter to allow smooth passage."]
+    },
+    "tangled_spool": {
+      "id": "tangled_spool",
+      "label": "Wire spool is tangled or crossed over itself",
+      "solutions": ["Stop welding immediately. Release wire tension at the drive roller. Carefully unwind the tangle by hand. Ensure wire feeds off the bottom of the spool. Reseat the spool and re-thread through the liner."]
+    },
+    "no_roller_contact": {
+      "id": "no_roller_contact",
+      "label": "Drive roller not in contact with wire",
+      "solutions": ["Open the drive roller arm and re-seat the wire in the correct groove. Close the arm and lock the tensioner. Verify the groove size matches your wire: V-groove for solid wire, knurled groove for flux-cored."]
+    },
+    "wrong_roller_tension": {
+      "id": "wrong_roller_tension",
+      "label": "Drive roller tension set incorrectly",
+      "solutions": ["Set tension to 3–5 for solid wire, 2–3 for flux-cored wire. Too loose = slipping; too tight = crushes flux-cored wire and causes blockage. Test by holding wire against a wood block 2–3\" away and pressing trigger — wire should bend without slipping."]
+    },
+    "wire_not_feeding": {
+      "id": "wire_not_feeding",
+      "label": "Wire feed problem causing arc instability",
+      "solutions": ["Check drive roller pressure, groove size, and liner condition. Verify contact tip size matches wire diameter. Ensure gun cable connector is fully inserted. See wire feed troubleshooting for complete diagnosis."]
+    },
+    "wrong_tip_liner": {
+      "id": "wrong_tip_liner",
+      "label": "Wrong contact tip or liner size for wire being used",
+      "solutions": ["Match contact tip to wire diameter exactly: 0.030\" wire = 0.030\" tip, 0.035\" wire = 0.035\" tip. Check for worn or clogged tip and replace if necessary. Confirm liner ID is larger than wire diameter."]
+    },
+    "wrong_wire_speed": {
+      "id": "wrong_wire_speed",
+      "label": "Wire feed speed set too high or too low",
+      "solutions": ["Adjust wire feed speed until arc sounds steady — a consistent crackling sound like frying bacon. Too slow = arc instability and burn-back. Too fast = stubbing and excessive spatter. Use synergic mode for auto-calibrated settings."]
+    },
+    "loose_gun_cable": {
+      "id": "loose_gun_cable",
+      "label": "Loose MIG gun cable connector",
+      "solutions": ["Remove gun cable connector and re-insert fully into the wire feed socket — no O-rings should be visible. Tighten the knurled locking knob. A loose connection interrupts the trigger signal and current path."]
+    },
+    "poor_ground_connection": {
+      "id": "poor_ground_connection",
+      "label": "Poor or loose ground (work) clamp connection",
+      "solutions": ["Move ground clamp as close to the weld as possible. Clean contact point to bare metal with a wire brush or grinder. A bad ground is one of the most common causes of arc instability — ensure firm metal-to-metal contact."]
+    },
+    "loose_electrode_cable": {
+      "id": "loose_electrode_cable",
+      "label": "Loose electrode cable connection (Stick/TIG)",
+      "solutions": ["Check cable connections at both the machine output socket and the electrode holder or TIG torch. Insert fully and tighten. Loose connections cause voltage drop and arc instability."]
+    },
+    "damaged_holder": {
+      "id": "damaged_holder",
+      "label": "Damaged or faulty electrode holder (Stick)",
+      "solutions": ["Inspect the electrode holder jaws and cable insulation for cracks, looseness, or poor contact. Replace holder if jaws are damaged. A worn holder causes inconsistent current delivery to the electrode."]
+    },
+    "wrong_current_setting": {
+      "id": "wrong_current_setting",
+      "label": "Output current set too low or too high for the process",
+      "solutions": ["MIG/Flux-Cored: use synergic mode — select wire diameter and material thickness for auto-settings. Stick: set amperage per electrode manufacturer spec (typically 90–120A for 1/8\" 6013). TIG: increase for thicker material, reduce for thin. Arc should be smooth and controllable."]
+    },
+    "low_gas": {
+      "id": "low_gas",
+      "label": "Low shielding gas cylinder pressure",
+      "solutions": ["Check cylinder pressure gauge — replace or refill cylinder when pressure drops below 200 PSI (usable gas remaining is low). Open cylinder valve fully before welding. Set regulator to 20–30 SCFH for MIG, 10–25 SCFH for TIG."]
+    },
+    "insufficient_current": {
+      "id": "insufficient_current",
+      "label": "Insufficient output current for material or process",
+      "solutions": ["Increase output amperage. On 120V input, maximum output is limited — switch to 240V for higher-current processes. Verify outlet voltage with a meter. Do not use an extension cord, which reduces available voltage."]
+    },
+    "faulty_trigger": {
+      "id": "faulty_trigger",
+      "label": "Faulty or stuck gun trigger",
+      "solutions": ["Press and release the trigger several times to check for debris or sticking. Inspect trigger wiring for damage. If trigger is unresponsive or stuck, replace the gun or torch. Contact Harbor Freight for warranty service."]
+    },
+    "no_ground_clamp": {
+      "id": "no_ground_clamp",
+      "label": "Ground (work) clamp not connected to workpiece",
+      "solutions": ["Attach the ground clamp directly to the metal workpiece or the welding table in firm contact with the workpiece. The circuit cannot complete without a ground connection — no arc is possible."]
+    },
+    "no_shielding_gas_tig": {
+      "id": "no_shielding_gas_tig",
+      "label": "No shielding gas connected or flowing (TIG)",
+      "solutions": ["Connect a 100% Argon cylinder. Open cylinder valve fully. Set regulator flow rate to 10–25 SCFH. Ensure gas hose is connected to the rear port of the machine. TIG cannot operate without shielding gas — tungsten and weld pool will oxidize immediately."]
+    },
+    "not_connected_to_outlet": {
+      "id": "not_connected_to_outlet",
+      "label": "Welder power cord not connected to outlet",
+      "solutions": ["Check that the power cord is fully plugged into the correct outlet. 240V operation requires a NEMA 6-50 receptacle. 120V operation requires a NEMA 5-15 or 5-20 receptacle. Verify the outlet voltage matches your setup."]
+    },
+    "outlet_unpowered": {
+      "id": "outlet_unpowered",
+      "label": "Outlet has no power",
+      "solutions": ["Test the outlet with a lamp or voltage meter. Check circuit breaker panel. Check for tripped GFCI outlets in the area. Do not use an extension cord — extension cords are not allowed with this welder."]
+    },
+    "wrong_plug_rating": {
+      "id": "wrong_plug_rating",
+      "label": "Outlet or plug rating does not match welder requirement",
+      "solutions": ["240V MIG requires a NEMA 6-50 outlet rated at 50A on a dedicated circuit. 120V requires a NEMA 5-15/5-20 outlet. Do not use an adapter that downgrades the current rating. Contact a licensed electrician to install correct outlet if needed."]
+    },
+    "circuit_breaker_tripped": {
+      "id": "circuit_breaker_tripped",
+      "label": "Circuit breaker tripped",
+      "solutions": ["Reset the circuit breaker at the panel. If it trips again immediately, the circuit is undersized. 240V MIG requires a dedicated 50A circuit. Do not share with other high-draw appliances. Have a licensed electrician verify circuit capacity."]
+    },
+    "power_cord_not_seated": {
+      "id": "power_cord_not_seated",
+      "label": "Power cord not fully seated at the welder",
+      "solutions": ["Check the power cord connection at the rear of the machine. Ensure it is fully inserted. A loose connection at the welder can prevent power from reaching the display and control board."]
+    },
+    "unit_not_connected": {
+      "id": "unit_not_connected",
+      "label": "Output cables not connected to work or electrode",
+      "solutions": ["Verify both output cables are plugged into the correct polarity sockets. MIG: wire feed to positive, ground to negative. Flux-Cored: wire feed to negative, ground to positive. TIG: torch to negative, ground to positive. Stick: electrode holder to positive, ground to negative."]
+    },
+    "insufficient_voltage": {
+      "id": "insufficient_voltage",
+      "label": "Insufficient input voltage at the outlet",
+      "solutions": ["Measure voltage at the outlet with a meter. 240V processes require 220–240VAC. Low voltage prevents arc ignition. If voltage is low, contact a licensed electrician. Remove any extension cords — they cause voltage drop."]
+    },
+    "low_over_voltage_protection": {
+      "id": "low_over_voltage_protection",
+      "label": "Over/under-voltage protection activated",
+      "solutions": ["Check that input voltage is within the acceptable range (120V ±10% or 240V ±10%). Voltage fluctuations from shared circuits or undersized wiring can trip the protection circuit. Switch to a dedicated circuit. Wait 30 seconds and retry."]
+    },
+    "wrong_mode": {
+      "id": "wrong_mode",
+      "label": "Welder set to wrong process mode",
+      "solutions": ["Confirm the mode selector is set to the correct process: MIG, Flux-Cored, TIG, or Stick. Mode selection controls output characteristics and polarity configuration. Selecting the wrong mode prevents arc ignition or produces incorrect weld characteristics."]
+    },
+    "empty_gas_bottle": {
+      "id": "empty_gas_bottle",
+      "label": "Shielding gas cylinder is empty",
+      "solutions": ["Check cylinder pressure gauge — zero pressure means the cylinder is empty. Replace with a full cylinder. MIG steel: C25 (75% Argon/25% CO2) or 100% CO2. MIG aluminum: 100% Argon. TIG: 100% Argon only."]
+    },
+    "wrong_gas_flow": {
+      "id": "wrong_gas_flow",
+      "label": "Shielding gas flow rate set too low or too high",
+      "solutions": ["Set flow rate: MIG 20–30 SCFH, TIG 10–25 SCFH. Too low = atmospheric contamination causes porosity. Too high = turbulence draws air into the gas shield and also causes porosity. Adjust regulator with gas flowing. Check for a blocked or spatter-clogged nozzle."]
+    },
+    "wrong_gas_type": {
+      "id": "wrong_gas_type",
+      "label": "Wrong shielding gas type for the process or material",
+      "solutions": ["MIG on steel: C25 (75% Argon/25% CO2) or 100% CO2. MIG on aluminum: 100% Argon only. TIG: 100% Argon only — CO2 will contaminate the tungsten. Never use shielding gas with self-shielded flux-cored wire. Check gas label before connecting."]
+    },
+    "inconsistent_speed": {
+      "id": "inconsistent_speed",
+      "label": "Inconsistent travel speed while welding",
+      "solutions": ["Practice maintaining a steady, even travel speed. Rest your forearm on the workpiece or a support. Watch the trailing edge of the weld puddle, not the arc tip. Use a guide line drawn on the workpiece to help track straight."]
+    },
+    "wire_feed_too_slow": {
+      "id": "wire_feed_too_slow",
+      "label": "Wire feed speed too slow for the voltage setting",
+      "solutions": ["Increase wire feed speed until the arc sounds steady — a smooth frying sound. In synergic mode, selecting a larger material thickness increases WFS automatically. Too slow = the arc melts back into the contact tip (burn-back) and poor penetration."]
+    },
+    "wrong_technique": {
+      "id": "wrong_technique",
+      "label": "Incorrect welding technique or joint preparation",
+      "solutions": ["MIG: use push angle 0–15° in the direction of travel. Flux-Cored: use drag (pull) angle 0–15° opposite travel direction. Maintain consistent CTWD of ≤1/2\". Ensure joint surfaces are clean and properly fit up with minimal gap. Keep arc on the leading edge of the puddle."]
+    },
+    "wrong_ctwd": {
+      "id": "wrong_ctwd",
+      "label": "Contact tip to work distance (CTWD) too long or too short",
+      "solutions": ["Maintain CTWD at 1/2\" (12mm) or less. Too long = voltage drop across wire extension, poor penetration, and arc instability. Too short = contact tip can touch workpiece causing shorts. The ideal CTWD is the same as the wire stickout beyond the tip."]
+    },
+    "wrong_angles": {
+      "id": "wrong_angles",
+      "label": "Incorrect gun or electrode work/travel angles",
+      "solutions": ["Travel angle: MIG push 0–15° forward, Flux-Cored drag 0–15° back. Work angle: 90° for flat butt welds, 45° for horizontal fillet welds. Wrong work angle causes the weld pool to flow away from the joint, producing poor fusion and adhesion."]
+    },
+    "workpieces_too_thick": {
+      "id": "workpieces_too_thick",
+      "label": "Material too thick for current setting or process",
+      "solutions": ["Increase amperage or switch to a higher-penetration process. Material above 3/8\" typically requires Stick or multiple MIG passes. Preheat steel above 3/8\" thick before welding to reduce thermal shock. Bevel thick joints to allow access to root of the joint."]
+    },
+    "excessive_material": {
+      "id": "excessive_material",
+      "label": "Excessive joint gap or incorrect fit-up",
+      "solutions": ["Tack weld pieces in alignment to minimize gap before full welding. For thin material, reduce amperage and increase travel speed. Use multiple lighter passes rather than one heavy pass. Gap greater than wire diameter will cause burn-through on thin stock."]
+    },
+    "excessive_heat": {
+      "id": "excessive_heat",
+      "label": "Excessive heat input",
+      "solutions": ["Reduce amperage or increase travel speed. Allow workpiece to cool between passes — thin material retains heat quickly. For intermittent beads, alternate sides to distribute heat. On thin sheet, use tack welds spaced apart before filling in."]
+    },
+    "insufficient_heat": {
+      "id": "insufficient_heat",
+      "label": "Insufficient heat — amperage or voltage too low",
+      "solutions": ["Increase output amperage. Increase wire feed speed for MIG/Flux-Cored. Verify correct voltage input — on 120V, maximum output is lower than 240V. Do not use an extension cord, which reduces available voltage."]
+    },
+    "insufficient_material": {
+      "id": "insufficient_material",
+      "label": "Insufficient filler metal deposited",
+      "solutions": ["Slow travel speed to allow more filler metal to build up in the joint. Increase wire feed speed slightly. For deep joints, use multiple passes — fill the root first, then add cap passes. Do not rush travel speed on gap joints."]
+    },
+    "wire_too_fast": {
+      "id": "wire_too_fast",
+      "label": "Wire feed speed set too high",
+      "solutions": ["Reduce wire feed speed. Symptoms of too-fast WFS: loud popping, heavy spatter, wire stubbing into the puddle, cold laps. The correct WFS produces a steady crackling sound. In synergic mode, reduce material thickness setting."]
+    },
+    "inaccurate_welding": {
+      "id": "inaccurate_welding",
+      "label": "Inaccurate gun tracking along the joint",
+      "solutions": ["Use both hands to guide the gun when possible. Mark a line on the workpiece with soapstone or marker to follow. Brace your forearm on the workpiece surface. Focus your eyes slightly ahead of the weld pool to anticipate the joint path."]
+    },
+    "ctwd_too_long": {
+      "id": "ctwd_too_long",
+      "label": "Contact tip to work distance too long",
+      "solutions": ["Reduce CTWD to 1/2\" or less. Long wire stickout increases electrical resistance in the wire extension, causing voltage drop, inconsistent arc, and a crooked, wandering bead. Move the gun closer to the workpiece."]
+    }
+  }
+}

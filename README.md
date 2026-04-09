@@ -1,92 +1,151 @@
-# Prox Founding Engineer Challenge
+# Vulcan OmniPro 220 — Multimodal Welder Assistant
 
-<img src="product.webp" alt="Vulcan OmniPro 220" width="400" /> <img src="product-inside.webp" alt="Vulcan OmniPro 220 — inside panel" width="400" />
+<img src="product.webp" alt="Vulcan OmniPro 220" width="380" />
 
-## The Product
+A multimodal AI agent for the Vulcan OmniPro 220 multiprocess welder. Ask questions in natural language or upload a weld photo for visual diagnosis. The agent answers with text, interactive diagrams, calculators, and flowcharts — not just prose.
 
-The [Vulcan OmniPro 220](https://www.harborfreight.com/omnipro-220-industrial-multiprocess-welder-with-120240v-input-57812.html) is a multiprocess welding system sold by Harbor Freight. It supports four welding processes (MIG, Flux-Cored, TIG, and Stick), runs on both 120V and 240V input, and has an LCD-based synergic control system.
+---
 
-Its owner's manual is 48 pages of dense technical content. Duty cycle matrices across multiple voltages and amperages, polarity setup procedures that differ per welding process, wire feed mechanisms with specific tensioner calibrations, wiring schematics, troubleshooting matrices, weld diagnosis diagrams, and a full parts list.
-
-This is exactly the kind of product Prox exists for. Nobody knows how to use this machine straight out of the box but has time to read 48 page manual, but a complicated machine needs expert-level support.
-
-Additional video: https://www.youtube.com/watch?v=kxGDoGcnhBw
-
-## Your Job
-
-Build a multimodal reasoning agent for the Vulcan OmniPro 220 using the Claude Agent SDK. The agent must be able to answer deep technical questions about this product accurately, helpfully, and not just in text.
-
-The manuals are in the `files/` directory.
-
-**There is no limit to how far you can go.** You can integrate voice. You can build a full interactive experience. Sky is the limit. The more ambitious and polished, the better.
-
-## What We're Testing
-
-### 1. Deep Technical Accuracy
-
-Your agent needs to answer questions like these correctly:
-
-- "What's the duty cycle for MIG welding at 200A on 240V?"
-- "I'm getting porosity in my flux-cored welds. What should I check?"
-- "What polarity setup do I need for TIG welding? Which socket does the ground clamp go in?"
-
-We will test with questions that require cross-referencing multiple manual sections, understanding visual content (diagrams, schematics, charts), and handling ambiguous questions that need clarification from the user.
-
-### 2. Multimodal Responses
-
-This is the most important part. Your agent must not be text-only.
-
-- If someone asks about polarity setup, the agent should draw or show a diagram of which cable goes in which socket, not just describe it.
-- If the answer relates to a specific image in the manual (the wire feed mechanism, the front panel controls, the weld diagnosis examples), the agent should surface that image.
-- If a question is complex enough, the agent should generate interactive content: a duty cycle calculator, a troubleshooting flowchart, a settings configurator that takes process + material + thickness and outputs recommended wire speed and voltage.
-
-When something is too cognitively hard to explain in words, the agent should draw it. Real-time diagrams, interactive schematics, visual walkthroughs generated through code.
-
-For your agent to handle these responses well you need to reverse engineer Claude artifacts. Here are two places where you can start:
-- https://claude.ai/artifacts (see how Claude renders interactive artifacts in chat)
-- https://www.reidbarber.com/blog/reverse-engineering-claude-artifacts
-
-### 3. Tone and Helpfulness
-
-Imagine your user just bought this welder and is standing in their garage trying to set it up. They're not an idiot, but they're not a professional welder either.
-
-### 4. Knowledge Extraction Quality
-
-The manual has a mix of text, tables, labeled diagrams, schematics, and decision matrices. Some critical information exists only in images (the welding process selection chart, the weld diagnosis photos, the wiring schematic). We want to see that your agent understands and presents the visual content, not just the text.
-
-## Tech Requirements
-
-- Use the [Anthropic Claude Agent SDK](https://docs.anthropic.com) as the foundation for your agent.
-- The project must run locally with a single API key provided via `.env`.
-- You are responsible for your own API costs during development.
-
-## How to Present Your Work
-
-**This matters.** Your submission is not just the code — it's how you present it.
-
-- **Build a frontend.** The best way for us to evaluate your agent is if it has a clean, simple UI we can run immediately. This is realistically the only way to properly demo an agent like this.
-- **Hosting is a plus.** If you host it somewhere we can access without cloning, that's a strong signal. Not required, but it removes friction and shows initiative.
-- **Write a clear README.** Explain how your agent works, what design decisions you made, how knowledge is extracted and represented, and how to run it. Your documentation will be evaluated — we want to see how you think and communicate, not just how you code.
-- **Video walkthrough is a huge plus.** Record yourself demoing the agent and explaining your approach. Walk through the hard questions, show how it handles multimodal responses, explain your architecture. This gives us a much richer picture of your work than code alone.
-
-We should be running your agent within 2 minutes of cloning your repo:
+## Quick Start
 
 ```bash
 git clone <your-fork>
-cd <your-fork>
-cp .env.example .env   # we plug in our own Anthropic API key
-# your install command (npm install, uv install, etc.)
-# your run command (npm run dev, python app.py, etc.)
+cd prox-challenge
+cp .env.example .env        # add your Anthropic API key
+npm install
+npm run dev                 # open http://localhost:3000
 ```
 
-If it takes longer than that to set up, that's a problem.
+That's it. No Python, no Docker, no extra setup.
 
-## What to Submit
+---
 
-1. Fork this repo.
-2. Build your solution.
-3. Submit your fork URL through the form at [useprox.com/join/challenge](https://useprox.com/join/challenge).
+## What It Does
 
-## What Happens Next
+### Deep Technical Accuracy
+The agent has structured knowledge of every technical spec in the manual — duty cycle matrices, polarity setups, wire sizes, gas flow rates, troubleshooting tables. When you ask a precise question, it looks up the exact answer instead of retrieving text chunks and guessing.
 
-We review submissions on a rolling basis and respond to every single one within a few days. Good luck.
+**Questions it handles well:**
+- "What's the duty cycle for MIG welding at 200A on 240V?" → exact numbers, interactive calculator
+- "How do I set up polarity for TIG welding?" → wiring diagram showing which socket each cable uses
+- "I'm getting porosity in my flux-cored welds" → structured troubleshooting with all causes and fixes
+- "What process should I use for 1/8 inch aluminum?" → process comparison with recommendations
+
+### Multimodal Responses
+The agent generates **interactive artifacts** — not just text. When an answer involves visual information, it produces a live React component that renders in a side panel:
+
+- **Wiring diagrams** — SVG showing the front panel with cables color-coded by socket
+- **Duty cycle calculators** — interactive gauge showing weld/rest times at any amperage
+- **Troubleshooting cards** — structured cause/solution layout for any defect
+- **Process comparison tables** — side-by-side process selection with recommendations
+
+### Weld Photo Diagnosis
+Upload a photo of a bad weld and the agent cross-references the manual's weld diagnosis guide to identify the problem and recommend fixes.
+
+### Manual Page Images
+When a question involves something visual — polarity cable setup, front panel controls, weld defect examples — the agent retrieves the actual manual page image and displays it inline. 51 pages were extracted from the PDFs; 21 key pages are keyword-indexed for retrieval.
+
+---
+
+## Architecture
+
+```
+prox-challenge/
+├── data/                        # Pre-extracted knowledge base (committed to repo)
+│   ├── duty-cycle.json          # Exact duty cycle tables for all processes/voltages
+│   ├── polarity.json            # Cable setup instructions per process
+│   ├── settings.json            # Process selection, wire tension, gas flow rates
+│   ├── troubleshooting.json     # Graph-structured: problems → causes → solutions
+│   ├── specs.json               # Machine specifications by category
+│   └── manual-images.json       # Image catalog: keywords → manual page PNGs
+├── src/
+│   ├── agent/
+│   │   ├── tools/               # One file per tool — add new tools here
+│   │   │   ├── duty-cycle.ts    # Lookup duty cycle at any amperage/voltage
+│   │   │   ├── polarity.ts      # Cable setup for MIG/Flux-Cored/TIG/Stick
+│   │   │   ├── settings.ts      # Process recommendation scored by material/thickness
+│   │   │   ├── troubleshooting.ts # Symptom → causes → solutions traversal
+│   │   │   ├── specs.ts         # Machine specs by category
+│   │   │   ├── manual-images.ts # Keyword-scored image retrieval
+│   │   │   └── index.ts         # Central tool registry
+│   │   ├── system-prompt.ts     # Agent persona and artifact trigger rules
+│   │   └── stream-parser.ts     # Extracts artifact XML from Claude's streaming output
+│   ├── app/
+│   │   ├── api/chat/route.ts    # Streaming API with agentic tool-use loop
+│   │   └── page.tsx
+│   └── components/
+│       ├── chat/                # Message rendering, input bar, chat interface
+│       └── artifacts/           # Sandboxed iframe renderer
+└── public/
+    ├── artifact-runtime.html    # Pre-bundled React + Tailwind + Recharts runtime
+    └── manual-images/           # 51 PNG pages extracted from the manual PDFs
+```
+
+---
+
+## The Six Tools
+
+| Tool | When Claude calls it | Backed by |
+|------|----------------------|-----------|
+| `lookup_duty_cycle` | "how long can I weld", duty cycle questions | `data/duty-cycle.json` |
+| `lookup_polarity` | cable setup, which socket, polarity | `data/polarity.json` |
+| `recommend_settings` | process selection, material/thickness settings | `data/settings.json` |
+| `get_troubleshooting` | any problem symptom ("porosity", "spatter", "arc cuts out") | `data/troubleshooting.json` |
+| `lookup_specs` | max amperage, wire sizes, power requirements | `data/specs.json` |
+| `get_manual_images` | any visual question — surfaced alongside text answers | `data/manual-images.json` |
+
+---
+
+## Key Design Decisions
+
+**Structured JSON over RAG**
+
+For a 48-page manual with precise technical tables, structured JSON lookups are more reliable than vector search. The duty cycle at 200A 240V MIG is a fact, not a retrieval problem. Tools return exact data; Claude decides how to present it.
+
+**Tool Use as the Agent Core**
+
+Claude calls six tools backed by structured data. This is a genuine agentic architecture: Claude reasons about which tools to call, calls them in sequence if needed, and uses the results to generate a grounded response. Specs can't be hallucinated — if the tool doesn't have it, Claude says so.
+
+**Troubleshooting as a Knowledge Graph**
+
+Troubleshooting data is modeled as nodes (problems) → edges (causes) → solutions, mirroring a knowledge graph structure. A "porosity" question traverses to all connected causes and their specific fixes. The structure mirrors how Prox models product knowledge and is designed to be extended without touching agent code.
+
+**Artifact Protocol**
+
+Claude generates interactive artifacts using XML tags embedded in its streaming output:
+```
+<artifact type="react" title="Duty Cycle Calculator">
+export default function DutyCycleCalc() { ... }
+</artifact>
+```
+The `StreamParser` class detects these tags and extracts the code while text continues streaming. The artifact renders in a sandboxed iframe with React, Tailwind, and Recharts pre-loaded — Babel transpiles JSX at runtime. Text and artifact stream simultaneously to their respective panels.
+
+**No Runtime Dependencies Beyond Node**
+
+All knowledge was extracted from the PDFs during development and committed to `data/`. No Python scripts, no Docker, no vector database. `npm install && npm run dev` is the entire setup. For a multi-product system, this data layer would be replaced by a structured extraction pipeline feeding the same tool interfaces — the agent layer is product-agnostic.
+
+---
+
+## Tech Stack
+
+- **Next.js 16** (App Router, TypeScript)
+- **@anthropic-ai/sdk** — Claude Sonnet 4.6 with streaming and tool use
+- **Tailwind CSS + shadcn/ui**
+- **React 19 + Recharts** (in artifact iframe)
+- **Babel standalone** (in artifact iframe — JSX transpilation at runtime)
+
+---
+
+## Extending the Agent
+
+**Add a new tool:**
+1. Create `src/agent/tools/my-tool.ts` with a handler function and Anthropic tool definition
+2. Add source data to `data/my-data.json`
+3. Export from `src/agent/tools/index.ts`
+4. Add the handler to `toolHandlers` in `src/app/api/chat/route.ts`
+
+**Update knowledge:**
+Edit the JSON files in `data/` — no agent code changes needed.
+
+**Change agent behavior:**
+Edit `src/agent/system-prompt.ts` — controls persona, when to generate artifacts, tone.

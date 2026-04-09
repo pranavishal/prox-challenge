@@ -1,0 +1,45 @@
+{
+  "_description": "Machine specifications, maximum OCV, weldable materials, and general info from manual page 7.",
+  "product": {
+    "name": "Vulcan OmniPro 220",
+    "model": "57812",
+    "manufacturer": "Harbor Freight Tools",
+    "processes": ["MIG", "Flux-Cored", "TIG", "Stick"],
+    "input_voltages": ["120V AC / 60Hz", "240V AC / 60Hz"],
+    "max_ocv": "86 VDC",
+    "ip_rating": "IP21S"
+  },
+  "MIG": {
+    "input_120V": { "current_at_output": "20.8A at 100A output" },
+    "input_240V": { "current_at_output": "25.5A at 200A output" },
+    "weldable_materials": ["Mild Steel", "Stainless Steel", "Aluminum (with optional Spool Gun)"],
+    "wire_types": {
+      "solid_core": ["0.025\"", "0.030\"", "0.035\""],
+      "flux_cored": ["0.030\"", "0.035\"", "0.045\""]
+    },
+    "wire_speed_ipm": { "min": 50, "max": 500 },
+    "spool_capacity": "Up to 12 lb spool"
+  },
+  "TIG": {
+    "input_120V": { "current_at_output": "20.6A at 125A output" },
+    "input_240V": { "current_at_output": "15.6A at 175A output" },
+    "weldable_materials": ["Mild Steel", "Stainless Steel", "Chrome Moly"],
+    "ac_tig_materials": ["Aluminum", "Magnesium Alloys"],
+    "shielding_gas": "100% Argon",
+    "tungsten_tip_prep": "Conical point — 2.5x electrode diameter length, ground parallel to electrode length",
+    "tungsten_protrusion": "1/8\" to 1/4\" beyond ceramic nozzle"
+  },
+  "Stick": {
+    "input_120V": { "current_at_output": "19.5A at 80A output" },
+    "input_240V": { "current_at_output": "23.7A at 175A output" },
+    "weldable_materials": ["Mild Steel", "Stainless Steel"]
+  },
+  "power_requirements": {
+    "120V": "20-amp circuit with GFCI protection, delayed-action circuit breaker",
+    "240V": "GFCI protected 240V receptacle, delayed-action circuit breaker",
+    "extension_cord": "NOT ALLOWED — do not use any extension cord with this welder",
+    "grounding": "Must be connected to grounded outlet only"
+  },
+  "thermal_protection": "Internal thermal protection auto-shuts down on overheat. Leave Power Switch ON — fan cools the unit. Auto-restarts when cool.",
+  "warranty": "90 days limited warranty from Harbor Freight Tools"
+}
